@@ -25,8 +25,8 @@ SETUP RELEVANT PATHS AND MODELS
 
 if 'config' not in locals(): config = {}
 
-config['DOCS_DIR'] = f"C:/Users/Nik/Box/Nikunj/Programmin/AI/RAG_Trial/datasets"
-config['VECTOR_STORE_PATH'] = f"C:/Users/Nik/Box/Nikunj/Programmin/AI/RAG_Trial/vector_db"
+config['DOCS_DIR'] = f""
+config['VECTOR_STORE_PATH'] = f""
 
 # Initialize the embedding model
 embeddings = GoogleGenerativeAIEmbeddings(model="models/embedding-001")
@@ -135,3 +135,4 @@ print("Text:", retrieved_text)
 print("\nStep: Generating a response using LLM")
 response = generate_answer(query, retrieved_data) ## loads similar data from vector store
 print("Response:", response.content)
+
