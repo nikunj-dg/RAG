@@ -32,8 +32,8 @@ SETUP RELEVANT PATHS AND MODELS
 
 if 'config' not in locals(): config = {}
 
-config['DOCS_DIR'] = f"C:/Users/Nik/Box/Nikunj/Programmin/AI/RAG_Trial/datasets"
-config['VECTOR_STORE_PATH'] = f"C:/Users/Nik/Box/Nikunj/Programmin/AI/RAG_Trial/vector_db"
+config['DOCS_DIR'] = f""
+config['VECTOR_STORE_PATH'] = f""
 
 # Initialize the embedding model
 # embeddings = GoogleGenerativeAIEmbeddings(model="models/embedding-001")
@@ -158,3 +158,4 @@ print("\nStep 4: Creating a vector store for chunks of documents after embedding
 # embeddings = OpenAIEmbeddings(model="text-embedding-3-large")
 
 # vector_store = InMemoryVectorStore(embeddings)
+
