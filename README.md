@@ -1,84 +1,70 @@
-# RAG
+# RAG Practice
 
-A collection of of Q & A and RAG model implementations, to can help practice. 
+A collection of Q&A and RAG model implementations built to understand and practice end-to-end Retrieval-Augmented Generation pipelines across:
 
-## Model 1
+- Local FAISS-based RAG
+- Databricks RAG 
+- Databricks + MLflow Model
+- Databricks DBRX Instruct LLM
 
-An implementation meant to run locally. 
+This project walks through:
 
-It reads the PDFs in a given directory, extracts data, processes it and stores it in a vector database. Then, based on the question, retrieves relevant data and passes it to the LLM along with the question for response generation. 
+- Document ingestion
+- Metadata tracking (Delta Table)
+- Chunking and embedding
+- FAISS vector storage
+- Similarity search retrieval
+- Prompt augmentation
+- LLM response generation
+- MLflow integration (Model 3)
+- Databricks production-style execution
 
-### Usage 
+## Model 1 - Local RAG 
 
-Download the code, make the following changes:
+- Runs locally
+- Reads PDFs from directory
+- Splits into chunks
+- Stores vectors in FAISS
+- Retrieves context
+- Sends context + query to LLM
 
-- Add API keys to the environment
+Make sure to:
 
-data_ingestion.py
-- Add the paths
+- Add API keys
+- Update document paths
+- Enter your query
 
-data_retrieval_generation.py
-- Add the paths
-- Enter the user query
+## Model 2 - Databricks RAG + Metadata Tracking
 
-Run data_ingestion.py
+- Uses Databricks Embeddings endpoint
+- Uses Unity Catalog Volumes
+- Stores file metadata in Delta table
+- Skips already processed files
 
-Run data_retrieval_generation.py
+## Model 3 - Databricks + MLflow
 
-## Model 2
+- Model logging via MLflow
+- Model versioning
+- Reproducibility
+- Better production readiness
 
-Similar to Model 1, implemented for Databricks. 
+## Technologies Used
 
-Additionally, stores the processed file details in a table. 
+- Python
+- LangChain
+- FAISS
+- Databricks
+- Unity Catalog
+- Delta Lake
+- MLflow
+- Databricks Embeddings
+- DBRX Instruct LLM
 
-### Usage 
+## Future Improvements
 
-Upload the .ipynb files to Databricks, make the following changes:
-
-- Add API keys to the environment
-- Add the documents to Databricks 
-
-Data_Ingestion.ipynb
-- Make necessary changes to the paths
-
-Data Retrieval.ipynb
-- Make necessary changes to the paths
-
-Run Data_Ingestion.ipynb
-
-Run Data Retrieval.ipynb
-
-## Model 3
-
-Similar to Model 2.
-
-Additionally, a model is created using mlflow. 
-
-### Usage 
-
-Upload the files to Databricks, make the following changes:
-
-- Add API keys to the environment
-- Add the documents to Databricks
-- Run the init_script.sh script 
-
-Data Ingestion_2.py
-- Make necessary changes to the paths
-
-Data Retrieval_2.py
-- Make necessary changes to the paths
-
-Run Data Ingestion_2.py
-
-Run Data Retrieval_2.py
-
-
-
-Google Vertex LLM, Databricks LLM is used to generate responses by providing information, thereby implementing RAG model. 
-
-The basic logic is separated into different scripts for understanding. 
-
-Run data_retrieval_generation.py
-
+- API wrapper (FastAPI)
+- Streaming responses
+- Deployment to serving endpoint
+- Automated document monitoring
 
 
